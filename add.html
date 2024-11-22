@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Markbook - Add student</title>
+    </head>
+    <body>
+
+        <h1> Add student</h1>
+
+        {% with messages = get_flahsed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{messages}}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <form action="/add" method="post"></form>
+        <label for="firstname">First name </label>
+        <input type="text" name="firstname" id="firstname" required>
+        <br>
+        <label for="lastname">last name </label>
+        <input type="text" name="lastname" id="lastname" required>
+        <br>
+        <label for="dob">DOB </label>
+        <input type="date" name="dob" id="dob" required>
+        <br>
+        <input type = "submit" value="Add student">
+    </form>
+
+    </body>
+</html>
